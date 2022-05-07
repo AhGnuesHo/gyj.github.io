@@ -1,0 +1,108 @@
+* {
+    margin: 3px;
+    padding: 3px;
+}
+:root{
+    --yellow: rgb(239, 226, 161);
+    --darkgreen: RGB(55, 99, 48);
+    --beige: rgb(201, 187, 65);
+    --mustard: rgb(252, 219, 81);
+    --mustard: rgb(252, 219, 81);
+    --olive: rgb(94, 153, 1);
+}
+html, body {
+    color: #58666e;
+    background-color: var(--yellow);
+    height: 100%;
+    font-family: 'Cafe24Ohsquareair';
+}
+body::-webkit-scrollbar {
+    display: none;/*스크롤바 뒷 배경 색상*/
+}
+header {
+    height: 60px;
+    background-color: antiquewhite;
+    border: 5px solid green;
+}
+
+    #title{
+        text-align: center;
+        bottom : 50%;
+        color: green;
+        font-size: large;
+        font-weight: 800;
+    }
+
+main {
+    height: calc(100% - 40px);
+    /*가로로 정렬, 부모의 넓이에 맞게 축소 (줄바꿈하지않음) */
+    display: flex;
+    flex-flow: row nowrap;
+}
+    aside {
+        border: 5px solid goldenrod;
+        width: 200px;
+        /* flex-shrink: 컨테이너의 크기를 0만큼 줄어들게 함 (줄어들지 않게 함)*/
+        flex-shrink: 0;
+        float: left;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+        ul{
+            padding: 5px;
+            list-style:none;
+        }
+            li{
+                padding: 3px;
+                color: green;
+                font-size: large;
+                font-weight: 400;
+            }
+
+    section {
+        border: 5px solid goldenrod;
+        display: flex;
+        flex-flow: row wrap;
+        flex: 1;
+        align-content: flex-start;
+        overflow-y: scroll;
+
+    }
+    section::-webkit-scrollbar{
+        display: none;
+    }
+        .card{
+            background-color: var(--darkgreen);
+            width: 200px;
+            display: flex;
+            flex-flow: row wrap;
+            border-radius: 10px;
+        }
+        .card img{
+            width: 150px;
+            height: 150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card span{
+        color: antiquewhite;
+            text-align: center;
+        }
+
+@media (max-width: 1000px){
+    .card{
+        background: var(--olive);
+    }
+    .card span{
+        color:black;
+    }
+}
+
+@media (max-width: 700px){
+    .card{
+        background: var(--mustard);
+    }
+    .card span{
+        color:black;
+    }
+}
