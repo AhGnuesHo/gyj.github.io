@@ -8,9 +8,6 @@ openModal.onclick = () => {
     modalDiv.classList.remove(HIDDEN_CLASSNAME);
 }
 
-closeModal.onclick = () => {
-    modalDiv.classList.add(HIDDEN_CLASSNAME);
+function hiddenModal() {
+     modalDiv.classList.add(HIDDEN_CLASSNAME);
 }
-
-
-

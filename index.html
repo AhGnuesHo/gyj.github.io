@@ -9,6 +9,7 @@
     <script defer src = './addPlant.js'></script>
     <script defer src = './modal.js'></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animation.css">
 </head>
 <body>
 <header>
@@ -17,7 +18,7 @@
 <main>
     <aside>
         <button id = "addPlant">Add</button>
-        <ul>
+        <ul id ="sideList">
             <li>파키라</li>
             <li>백양금</li>
             <li>맥시코소철</li>
@@ -49,7 +50,7 @@
     </section>
     <div class = "modal hidden" >
         <form class = "newPlantInfo" class = 'hidden'>
-            <span id = "closeModal" >❌</span>
+            <span id = "closeModal" onclick="hiddenModal()" >❌</span>
             <label class = 'label'>이름</label>
             <input class = 'setPlant'  id ='name' placeholder="몬스테라">
             <label class = 'label'>이미지</label>
