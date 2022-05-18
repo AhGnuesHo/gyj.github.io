@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>gyj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <script defer src = './addPlant.js'></script>
+    <script defer src = './modal.js'></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -11,6 +16,7 @@
 </header>
 <main>
     <aside>
+        <button id = "addPlant">Add</button>
         <ul>
             <li>파키라</li>
             <li>백양금</li>
@@ -41,7 +47,17 @@
             <span>작지만 강한!</span>
         </div>
     </section>
+    <div class = "modal hidden" >
+        <form class = "newPlantInfo" class = 'hidden'>
+            <span id = "closeModal" >❌</span>
+            <label class = 'label'>이름</label>
+            <input class = 'setPlant'  id ='name' placeholder="몬스테라">
+            <label class = 'label'>이미지</label>
+            <input class = 'setPlant'  id ='img' placeholder="URL">
+            <label class = 'label'  >내용</label>
+            <input class = 'setPlant' id = 'content' placeholder="물을 주면 좋아해요">
+            <button type = 'submit' id = 'submutButton'> save </button>
+        </form>
+    </div>
 </main>
-
-
 </body>

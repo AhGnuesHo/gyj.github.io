@@ -1,6 +1,6 @@
 * {
-    margin: 3px;
-    padding: 3px;
+    margin: 0px;
+    padding: 0px;
 }
 :root{
     --yellow: rgb(239, 226, 161);
@@ -13,24 +13,28 @@
 html, body {
     color: #58666e;
     background-color: var(--yellow);
-    height: 100%;
-    font-family: 'Cafe24Ohsquareair';
+    height: 100%; 
+    font-family: 'Gaegu', cursive;
 }
 body::-webkit-scrollbar {
     display: none;/*스크롤바 뒷 배경 색상*/
 }
 header {
+    margin: 3px;
+    position: relative;
     height: 60px;
     background-color: antiquewhite;
     border: 5px solid green;
 }
 
     #title{
-        text-align: center;
-        bottom : 50%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: green;
         font-size: large;
-        font-weight: 800;
+        font-weight: 900;
     }
 
 main {
@@ -40,6 +44,7 @@ main {
     flex-flow: row nowrap;
 }
     aside {
+        margin: 3px;
         border: 5px solid goldenrod;
         width: 200px;
         /* flex-shrink: 컨테이너의 크기를 0만큼 줄어들게 함 (줄어들지 않게 함)*/
@@ -48,18 +53,35 @@ main {
         display: flex;
         flex-flow: column nowrap;
     }
+        #addPlant{
+            margin: 3px;
+            color: green;
+            border-radius: 1ch;
+            border: 0ch;
+            background-color:goldenrod;
+            padding: 7px 10px;
+            cursor: pointer;
+        }
+        
+        #addPlant:hover{
+            background-color: green;
+            color : wheat
+        }
+
         ul{
-            padding: 5px;
+            
+            padding: 10px;
             list-style:none;
         }
             li{
-                padding: 3px;
+                padding: 10px;
                 color: green;
                 font-size: large;
                 font-weight: 400;
             }
 
     section {
+        margin: 3px;
         border: 5px solid goldenrod;
         display: flex;
         flex-flow: row wrap;
@@ -72,6 +94,8 @@ main {
         display: none;
     }
         .card{
+            margin: 3px;
+            padding: 3px;
             background-color: var(--darkgreen);
             width: 200px;
             display: flex;
@@ -79,15 +103,89 @@ main {
             border-radius: 10px;
         }
         .card img{
+            margin: 3px;
+            padding: 3px;
             width: 150px;
             height: 150px;
             margin-left: auto;
             margin-right: auto;
         }
         .card span{
+            margin: 3px;
+            padding: 3px;
         color: antiquewhite;
             text-align: center;
         }
+    
+        .hidden{
+            display : none;
+        }
+
+        .modal{
+            opacity: 0.9;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed; 
+            z-index: 10;
+            background-color: #58666e;
+        
+        }
+            #closeModal {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 10px 20px;
+                font-weight: 700;
+                font-size: 20px;
+                cursor: pointer;
+                z-index: 12;
+            }
+
+            .newPlantInfo{
+                padding: 20px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                height : 400px;
+                width: 400px;
+                border-radius: 1ch;
+                color:white;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                z-index: 11;
+                background-color:slateblue;
+            }
+
+            .label {
+                margin-bottom: 5px;
+                font-size: 20px;
+            }
+
+            .setPlant{
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                outline: none;
+                border-radius: 1ch;
+                border: 2px solid rgb(252, 219, 81);
+                border-radius : 1ch;
+            }
+
+            #submutButton {
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                outline: none;
+                border-radius: 1ch;
+                margin-top: 30px;
+                background-color: rgb(252, 219, 81);
+            }
+
+        
 
 @media (max-width: 1000px){
     .card{
