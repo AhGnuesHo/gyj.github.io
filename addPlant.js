@@ -1,21 +1,30 @@
-const newPlantsaveButton = document.querySelector('#submutButton');
+const newname = document.querySelector("#name");
+const img = document.querySelector("#img");
+const content = document.querySelector("#content");
+const sideList = document.querySelector("#sideList");
+const newForm = document.querySelector(".newPlantInfo");
+const section = document.querySelector("section");
 
+function addPlantHandler(e) {
+  e.preventDefault();
 
-const d = document.querySelector('#name').value;
-const img = document.querySelector('#img').value;
-const content = document.querySelector('#content').value;
-const sideList = document.querySelector('#sideList');
-const newForm = document.querySelector('.newPlantInfo');
+  const li = document.createElement("li");
+  li.appendChild(document.createTextNode(newname.value));
+  sideList.appendChild(li);
 
-newForm.addEventListener('submit',addPlant);
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add('card');
+  section.appendChild(cardDiv);
 
-function addPlant(e){
-    e.preventDefault;
+  const imgSrc = document.createElement("img");
+  imgSrc.setAttribute("src", img.value);
+  imgSrc.setAttribute("alt", newname.value);
+  const span = document.createElement("span")
+  span.appendChild(document.createTextNode(content.value));
+  cardDiv.appendChild(imgSrc);
+  cardDiv.appendChild(span);
 
-    const li = document.createElement("li");
-    li.appendChild(document.createTextNode(d))
-    sideList.appendChild(li)
-
-    hiddenModal();
-    
+  hiddenModal();
 }
+
+newForm.addEventListener("submit", addPlantHandler);
